@@ -11,6 +11,6 @@
 * Node v4.2.1 - use `nvm` to switch to a desired version if you have multiple `node` installed
 
 ## API Endpoint
-Dev - http://localhost:3000/api
+Dev - http://localhost/api
 Prod- http://hometrack-tg-1568071183.ap-southeast-2.elb.amazonaws.com/api
 Sample Payload - https://github.com/Hometrack/codetest/blob/master/hometrack-sample-request.json
