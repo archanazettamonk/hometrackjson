@@ -4,4 +4,4 @@
 2. Security Groups/Hardening
 3. Memory profiling of json-schema parser/matcher
 4. Caching
-5. Test Cases
+5. Test Cases, Unit and Integration testing
