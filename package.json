@@ -1,0 +1,28 @@
+{
+  "name": "hometrackapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/archanazettamonk/hometrackjson.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/archanazettamonk/hometrackjson/issues"
+  },
+  "homepage": "https://github.com/archanazettamonk/hometrackjson#readme",
+  "dependencies": {
+    "ajv": "^5.2.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.7"
+  }
+}

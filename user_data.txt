@@ -1,0 +1,22 @@
+#!/bin/bash
+sudo yum install -y httpd24
+sudo service httpd start
+sudo chown -R apache:ec2-user /var/www
+sudo chmod g+s /var/www
+sudo chmod g+w -R /var/www
+
+sudo yum -y install git
+
+#node
+cd /home/ec2-user
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+export NVM_DIR="/root/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+nvm install 4.2.1
+
+rm -rf /var/www/html
+cd /var/www/
+git clone https://github.com/archanazettamonk/hometrackjson.git
+mv hometrackjson html
+cd html
+npm install

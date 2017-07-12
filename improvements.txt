@@ -1,0 +1,7 @@
+=== Improvements ===
+
+1. Custom AMI
+2. Security Groups/Hardening
+3. Memory profiling of json-schema parser/matcher
+4. Caching
+5. Test Cases

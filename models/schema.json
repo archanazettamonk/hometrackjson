@@ -1,0 +1,90 @@
+{
+"$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "payload": {
+            "id": "/properties/payload",
+"type": "array",
+"minLength": 1,
+            "items": {
+"type": "object",
+                "id": "/properties/payload/items",
+                "properties": {
+                    "address": {
+                        "id": "/properties/payload/items/properties/address",
+                        "properties": {
+                            "buildingNumber": {
+                                "id": "/properties/payload/items/properties/address/properties/buildingNumber",
+                                "type": "string"
+                            },
+                            "lat": {
+                                "id": "/properties/payload/items/properties/address/properties/lat",
+                                "type": "number"
+                            },
+                            "lon": {
+                                "id": "/properties/payload/items/properties/address/properties/lon",
+                                "type": "number"
+                            },
+                            "postcode": {
+                                "id": "/properties/payload/items/properties/address/properties/postcode",
+                                "type": "string"
+                            },
+                            "state": {
+                                "id": "/properties/payload/items/properties/address/properties/state",
+                                "type": "string"
+                            },
+                            "street": {
+                                "id": "/properties/payload/items/properties/address/properties/street",
+                                "type": "string"
+                            },
+                            "suburb": {
+                                "id": "/properties/payload/items/properties/address/properties/suburb",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "suburb",
+                            "state",
+                            "street",
+                            "buildingNumber"
+                        ],
+                        "type": "object"
+                    },
+                    "propertyTypeId": {
+                        "id": "/properties/payload/items/properties/propertyTypeId",
+                        "type": "integer"
+                    },
+                    "readyState": {
+                        "id": "/properties/payload/items/properties/readyState",
+                        "type": "string"
+                    },
+                    "reference": {
+                        "id": "/properties/payload/items/properties/reference",
+                        "type": "string"
+                    },
+                    "shortId": {
+                        "id": "/properties/payload/items/properties/shortId",
+                        "type": "string"
+                    },
+                    "status": {
+                        "id": "/properties/payload/items/properties/status",
+                        "type": "integer"
+                    },
+                    "type": {
+                        "id": "/properties/payload/items/properties/type",
+                        "type": "string"
+                    },
+                    "workflow": {
+                        "id": "/properties/payload/items/properties/workflow",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "workflow",
+                    "address",
+                    "type"
+                ]
+            }
+        }
+    }
+}
