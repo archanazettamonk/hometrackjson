@@ -12,5 +12,7 @@
 
 ## API Endpoint
 Dev - http://localhost:3000/api
+
 Prod- http://hometrack-load-bal-1683226313.ap-southeast-2.elb.amazonaws.com:3000/api
+
 Sample Payload - https://github.com/Hometrack/codetest/blob/master/hometrack-sample-request.json
