@@ -14,7 +14,7 @@ module.exports = function( app ) {
 		  }
 		});
     app.use( bodyParser.urlencoded({ extended: true }) );
-		app.get( '/api', function(req, res) {
+		app.get( '/health', function(req, res) {
 			res.status(200);
 			res.send( '{"status": "ok"}' );
 		});
