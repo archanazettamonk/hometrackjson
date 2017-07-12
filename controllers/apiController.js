@@ -14,6 +14,11 @@ module.exports = function( app ) {
 		  }
 		});
     app.use( bodyParser.urlencoded({ extended: true }) );
+		app.get( '/api', function(req, res) {
+			res.status(200);
+			res.send( '{"status": "ok"}' );
+		});
+
     app.post( '/api', function(req, res) {
         var instance = req.body;
         var schema = propertySchema;
