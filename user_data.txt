@@ -1,24 +1,19 @@
 #!/bin/bash
-mkdir /var/www
-chown -R ec2-user:ec2-user /var/www
-chmod g+s /var/www
-chmod g+w -R /var/www
-
 sudo yum -y install git
 
 #node
-cd /home/ec2-user
-mkdir nvm
-chown ec2-user:ec2-user nvm
-chmod 777 nvm
-export NVM_DIR="/home/ec2-user/nvm"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-nvm install 4.2.1
+su ec2-user;
+cd /home/ec2-user;
+mkdir nvm;
+export NVM_DIR="/home/ec2-user/nvm";
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash;
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh";
+nvm install 4.2.1;
+npm install -g nodemon;
 
-cd /var/www/
-git clone https://github.com/archanazettamonk/hometrackjson.git
-mv hometrackjson html
-cd html
-npm install
-nodemon app.js
+cd /home/ec2-user;
+git clone https://github.com/archanazettamonk/hometrackjson.git;
+cd hometrackjson;
+npm install;
+ln -s node_modules/nodemon/bin/nodemon.js nodemon;
+(nohup node app.js)
