@@ -7,6 +7,12 @@ var propertySchema = require( '../models/schema.json' );
 var bodyParser = require( 'body-parser' );
 module.exports = function( app ) {
     app.use( bodyParser.json() );
+		app.use(function(err, req, res, next) {
+		  if (err instanceof SyntaxError && err.status === 400) {
+				res.status(400);
+				res.send( '{"error": "Bad JSON"}' );
+		  }
+		});
     app.use( bodyParser.urlencoded({ extended: true }) );
     app.post( '/api', function(req, res) {
         var instance = req.body;
@@ -15,8 +21,12 @@ module.exports = function( app ) {
         var ajv = new Ajv({
             allErrors: true
         });
-        var validate = ajv.compile( schema );
-        var valid = validate( instance );
+
+				var valid = false;
+				var validator = ajv.compile( schema );
+
+				valid = validator( instance );
+
         if ( !valid ) {
             //res.send(validate.errors);
             res.status(400);
